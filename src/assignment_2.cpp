@@ -280,6 +280,7 @@ void render()
         shaderUniform(sScene.shaderWater, "uProj",  proj);
         shaderUniform(sScene.shaderWater, "uView",  view);
         shaderUniform(sScene.shaderWater, "uModel", Matrix4D::identity());
+    shaderUniform(sScene.shaderWater, "uTime", sScene.waterSim.accumTime);
         shaderUniform(sScene.shaderBoat, "uLightDirectionalDir", dirLightSourceDirection);
         shaderUniform(sScene.shaderBoat, "uLightColor", lightColor);
 
