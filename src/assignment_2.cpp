@@ -284,6 +284,11 @@ void render()
         shaderUniform(sScene.shaderBoat, "uLightDirectionalDir", dirLightSourceDirection);
         shaderUniform(sScene.shaderBoat, "uLightColor", lightColor);
 
+        // Inside your rendering loop before rendering the scene
+        //sScene.waterSim.accumTime += dt;
+        shaderUniform(sScene.shaderWater, "uTime", sScene.waterSim.accumTime);
+
+
         /* set material properties */
         shaderUniform(sScene.shaderWater, "uMaterial.diffuse", sScene.water.material.front().diffuse);
         shaderUniform(sScene.shaderWater, "uMaterial.ambient", sScene.water.material.front().ambient);
