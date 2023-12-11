@@ -14,7 +14,9 @@ struct Boat
         RUDDER_RIGHT,
         THROTTLE_UP,
         THROTTLE_DOWN,
-        CONTROL_COUNT
+        NIGHT,
+        DAY,
+        CONTROL_COUNT,
     };
 
     std::vector<Model> partModel;
