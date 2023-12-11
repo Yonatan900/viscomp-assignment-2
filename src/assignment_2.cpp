@@ -173,6 +173,11 @@ void render()
         shaderUniform(sScene.shaderWater, "uView",  view);
         shaderUniform(sScene.shaderWater, "uModel", Matrix4D::identity());
 
+        // Inside your rendering loop before rendering the scene
+        //sScene.waterSim.accumTime += dt;
+        shaderUniform(sScene.shaderWater, "uTime", sScene.waterSim.accumTime);
+
+
         /* set material properties */
         shaderUniform(sScene.shaderWater, "uMaterial.diffuse", sScene.water.material.front().diffuse);
 
